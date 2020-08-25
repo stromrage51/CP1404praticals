@@ -1,27 +1,50 @@
-MINIMUM_LENGTH = 4
+"""
+Subject: CP1404
+
+The purpose of these program is to Ask the user for a number of scores
+Generate that many random numbers (scores) between 0 and 100 inclusive
+For each of those scores, write the "result" to a file called results.txt.
+
+Student name: Matthew Ballarino
+Student number: 13291475
+"""
+
+import random
 
 
-# version_1()
+"""Creating a random score"""
+# amount_of_grades = int(input("Please how grades their are: "))
 
 
-def main():
-    """Get and print password using functions."""
-    password = get_password(MINIMUM_LENGTH)
-    print_asterisks(password)
+# print(grade_statement(score, amount_of_grades))
+
+"""Finds out the score and giving a grade"""
+score = 0
+work = int(input("How many grades are their: "))
+for k in range(work):
+    LIST_RANDOM = random.randrange(0, 100, 10)
+
+    score = LIST_RANDOM
+    print("The score was {0} and grade was {1}".format(LIST_RANDOM, score, sep=''))
+    # score += work
+    if score <= 0:
+        print("Invalid score")
+    else:
+        if score >= 90:
+            print("Excellent")
+            # score += 1
+        elif score >= 50:
+            print("Passable")
+            # score += 1
+        else:
+             print("Bad")
+             # score += 1
 
 
-def get_password(minimum_length):
-    """Get password, ensuring it meets the minimum_length requirement."""
-    password = input("Enter password of at least {} characters: ".format(minimum_length))
-    while len(password) < minimum_length:
-        print("Password too short")
-        password = input("Enter password of at least {} characters: ".format(minimum_length))
-    return password
-
-
-def print_asterisks(sequence):
-    """Print as many asterisks as there are characters in the passed-in sequence."""
-    print('*' * len(sequence))
-
-
-main()
+# number_items = int(input("Please enter item amount: "))
+#
+# total_price = 0
+#
+# for k in range(number_items):
+#     price = float(input("Please enter price of item"))
+#     total_price += price
