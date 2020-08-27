@@ -7,31 +7,28 @@ import random
 
 
 def main():
+    """Converting file fahrenheit temperatures into celsius."""
+    input_file = open("temps_input.txt.txt", "r")
+    output_file = open("temps_output.txt.txt", "w")
+    for converting in input_file:
+        work = converting_fahrenheit_to_celsius(float(converting))
+        print(work, file=output_file)
+    input_file.close()
+    output_file.close()
 
 
-
-
-    while choice != "Q":
-          if choice == "C":
-             celsius = float(input("Celsius: "))
-             fahrenheit = converting_celsius_to_fahrenheit(celsius)
-             print("Result: {:.2f} F".format(fahrenheit))
-          elif choice == "F":
-                fahrenheit = float(input("Fahrenheit: "))
-                celsius = converting_fahrenheit_to_celsius(fahrenheit)
-                print("Result: {:.2f} C".format(celsius))
-          else:
-                 print("Invalid option")
-          print(MENU)
-          choice = input(">>> ").upper()
-
-
-    print("Thank you.")
+def new_input_file(write):
+    """Write the number of temperatures to file"""
+    temperatures_file = open("temps_input.txt.txt", "w")
+    for ze in range(write):
+        temp = random.uniform(-200, 200)
+        print(temp, file=temperatures_file)
+    temperatures_file.close()
 
 
 def converting_fahrenheit_to_celsius(fahrenheit):
-    celsius = (fahrenheit - 32) * 5 / 9
-    return celsius
+    """Converting fahrenheit to celsius"""
+    return (fahrenheit - 32) * 5 / 9
 
 
 def converting_celsius_to_fahrenheit(celsius):
@@ -39,7 +36,4 @@ def converting_celsius_to_fahrenheit(celsius):
     return celsius * 9.0 / 5 + 32
 
 
-
 main()
-
-

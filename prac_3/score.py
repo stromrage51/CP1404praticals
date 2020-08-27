@@ -11,41 +11,39 @@ Student number: 13291475
 
 import random
 
-
 """Creating a random score"""
+
+
 # amount_of_grades = int(input("Please how grades their are: "))
 
 
 # print(grade_statement(score, amount_of_grades))
-def main ():
+def main():
     """Finds out the score and giving a grade"""
-    score = 0
+    number_of_grades = int(input("How many grades are their: "))
+    results_file = open("scores.txt.txt", "w")
+    for k in range(number_of_grades):
+        score = random.randint(0, 100)
+        grade = finding_grade(score)
+        print("The score was {0} and grade was {1}".format(score, grade), file=results_file)
+        print("The score was {0} and grade was {1}".format(score, grade))
+    results_file.close()
 
-    work = int(input("How many grades are their: "))
-    LIST_RANDOM = grade_maker(score, work)
-    # LIST_RANDOM = 0
-    print(grade_maker(score, work))
-    print(grade_maker(LIST_RANDOM, work))
-    print("The score was {0} and grade was {1}".format(grade_maker(LIST_RANDOM, work), grade_maker(score, work), sep=''))
 
-def grade_maker(score, work):
-    for k in range(work):
-        LIST_RANDOM = random.randrange(0, 100, 10)
-        score = LIST_RANDOM
+def finding_grade(score):
+    if score < 0 or score > 100:
+        output = "Invalid score"
 
-    if score <= 0:
-        return "Invalid score"
+    elif score >= 90:
+        output = "Excellent"
+
+    elif score >= 50:
+        output = "Passable"
+
     else:
-        if score >= 90:
-            return "Excellent"
+        output = "Bad"
 
-        elif score >= 50:
-            return "Passable"
-
-        else:
-            return "Bad"
+    return output
 
 
 main()
-
-
