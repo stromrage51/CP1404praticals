@@ -19,13 +19,8 @@ CAPTIAL_VOWELS = "AEIOU"
 def main():
     guessing = "cvdrh"
     user_input = 0
-    try:
-        user_input = int(input("How many characters is in the password?: "))
-        while user_input == 0:
-            user_input = int("No zero please try again")
 
-    except ValueError:
-            print("Please enter how characters their are in numberical form")
+    user_input = valid_format(user_input)
 
     word_format = "".join(random.choice(guessing) for i in range(user_input))
 
@@ -46,15 +41,18 @@ def main():
 
     print("The password is {0} with a string length of {1}".format(word, user_input))
 
+
+def valid_format(user_input):
+    try:
+        user_input = int(input("How many characters is in the password?: "))
+        while user_input == 0:
+            user_input = int("No zero please try again")
+
+    except ValueError:
+        print("Please enter how characters their are in numberical form")
+
+    return user_input
+
+
 main()
-# finished = False
-# result = 0
-# while not finished:
-#     try:
-#          result = int(input("Enter a number: "))
-#          finished= True
-#          # the true function ends the loop
-#     except:
-#             print("Please enter a valid integer.")
-#             result = int(input("Please enter a valid number: "))
-# print("Valid result is:", result)
+
