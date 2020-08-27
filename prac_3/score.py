@@ -13,11 +13,6 @@ import random
 
 """Creating a random score"""
 
-
-# amount_of_grades = int(input("Please how grades their are: "))
-
-
-# print(grade_statement(score, amount_of_grades))
 def main():
     """Finds out the score and giving a grade"""
     number_of_grades = int(input("How many grades are their: "))
@@ -31,6 +26,7 @@ def main():
 
 
 def finding_grade(score):
+    "Determining the grade of random score"
     if score < 0 or score > 100:
         output = "Invalid score"
 
