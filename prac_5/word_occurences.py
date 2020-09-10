@@ -9,23 +9,23 @@ Student name: Matthew Ballarino
 Student number: 13291475
 """
 
-word_to_count = {}
+word_count = {}
 text = input("please enter a sentence: ")
 
 # this is a collection of words of nice words this is a fun thing it is
 words = text.split()
 for word in words:
-    count = word_to_count.get(word, 0)
+    count = word_count.get(word, 0)
 # get function works by
-    word_to_count[word] = count + 1
+    word_count[word] = count + 1
 print(words)
-words = list(word_to_count.keys())
+words = list(word_count.keys())
 words.sort()
 
 
 max_length = max((len(word) for word in words))
 for word in words:
-    print("{:{}} : {}".format(word, max_length, word_to_count[word]))
+    print("{:{}} : {}".format(word, max_length, word_count[word]))
 
 # this is a collection of words of nice words this is a fun thing it is
 # a          : 2 there were two a
