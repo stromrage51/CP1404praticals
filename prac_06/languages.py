@@ -22,13 +22,6 @@ def main():
         if language.is_dynamic():
             print(language.name)
 
-    # my_car = Programing_Language("name", "typing", "reflection", "year")
-    # # name, typing, reflection, year)
-    #
-    # print(my_car.name)
-    # #
-    # # my_car.drive(30)
-    # # print("fuel =", my_car.fuel)
 
 main()
 
