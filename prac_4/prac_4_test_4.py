@@ -1,8 +1,16 @@
 
 
-numbers = [3, 1, 4, 1, 5, 9, 2]
+
+words = ["aye", "bee", "sea", "bee"]
+words.remove("bee")
+print(words.pop())
 
 
-z = numbers + [6, 5, 3]
 
-print(z)
+
+
+
+
+
+
+
